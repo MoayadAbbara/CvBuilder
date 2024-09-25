@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    @yield('styles')
 </head>
 
 <body>
@@ -67,12 +68,13 @@
         </div>
     </header>
 
-    <main class="bg-white relative overflow-hidden h-screen px-28">
+    <main class="bg-white relative px-28">
         @yield('content')
     </main>
     <h1>Footer</h1>
 
     <script src="https://kit.fontawesome.com/61da615d84.js" crossorigin="anonymous"></script>
+    @yield('scripts')
 </body>
 
 </html>
