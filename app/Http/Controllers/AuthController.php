@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function Register(Request $request)
+    public function showRegistrationForm()
+    {
+        return view('Auth.register');
+    }
+
+    public function register(Request $request)
     {
         $formFields = $request->validate([
-            'name' => 'required|min:3|max:30',
+            'name' => 'required|string|min:3|max:30',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -23,9 +29,15 @@ class AuthController extends Controller
         auth()->login($user);
 
         return redirect('/');
+
     }
 
-    public function Login(Request $request)
+    public function showLoginForm()
+    {
+        return view('Auth.login');
+    }
+
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -34,7 +46,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
