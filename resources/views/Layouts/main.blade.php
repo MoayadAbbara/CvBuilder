@@ -33,7 +33,7 @@
                     @Auth
                     <a href="#"
                         class="bg-blue-500 hover:bg-blue-700 mr-3 text-white font-bold py-2 px-4 rounded normal-case">
-                        <i class="fa-solid fa-user"></i> My Account
+                        <i class="fa-solid fa-user"></i> {{auth()->user()->name}}
                     </a>
                     <form method="POST" action="{{route('logout')}}">
                         @csrf

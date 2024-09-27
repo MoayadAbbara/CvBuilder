@@ -51,10 +51,34 @@ Route::get('/form/2', function () {
     return view('form2');
 });
 
+Route::post('/session', function (Illuminate\Http\Request $request) {
+    $myArray = [
+        'position' => $request->position,
+        'company' => $request->company,
+        'startdate' => $request->startdate,
+        'enddate' => $request->enddate,
+        'location' => $request->location,
+        'details' => $request->details,
+    ];
+    $request->session()->push('experiences', $myArray);
+    return redirect('/list');
+})->name('session');
+
+Route::get('/session', function (Illuminate\Http\Request $request) {
+    return session('experiences');
+    // $request->session()->forget('experiences');
+});
+
 
 
 Route::get('/rte', function () {
     return view('rte');
+});
+
+Route::get('/list', function () {
+    return view('list', [
+        'experinces' => session('experiences')
+    ]);
 });
 
 
