@@ -4,57 +4,11 @@
 @section("content")
 
 
-<div class="flex w-full justify-center">
-    <ol class="lg:flex items-center w-full max-w-8xl space-y-4 lg:space-y-0">
-        <li class="flex-1">
-            <a href="#" class="flex items-center font-medium px-4 py-5 w-full rounded-lg bg-blue-50">
-                <span
-                    class="w-16 h-16 bg-blue-500 rounded-full flex justify-center items-center mr-3 text-sm text-white lg:w-14 lg:h-10">01</span>
-                <h4 class="text-base text-blue-500">Personal Information</h4>
-            </a>
-        </li>
-        <li class="flex-1">
-            <a class="flex items-center font-medium px-4 py-5 w-full">
-                <span
-                    class="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">02</span>
-                <h4 class="text-base text-gray-900">Experience</h4>
-            </a>
-        </li>
-        <li class="flex-1">
-            <a class="flex items-center font-medium px-4 py-5 w-full">
-                <span
-                    class="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">03</span>
-                <h4 class="text-base text-gray-900">Education</h4>
-            </a>
-        </li>
-        <li class="flex-1">
-            <a class="flex items-center font-medium px-4 py-5 w-full">
-                <span
-                    class="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">04</span>
-                <h4 class="text-base text-gray-900">Skills</h4>
-            </a>
-        </li>
-        <li class="flex-1">
-            <a class="flex items-center font-medium px-4 py-5 w-full">
-                <span
-                    class="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">05</span>
-                <h4 class="text-base text-gray-900">Projects</h4>
-            </a>
-        </li>
-
-        <li class="flex-1">
-            <a class="flex items-center font-medium px-4 py-5 w-full">
-                <span
-                    class="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">06</span>
-                <h4 class="text-base text-gray-900">Languages</h4>
-            </a>
-        </li>
-    </ol>
-</div>
+@include('Partial._formStepper')
 
 
 
-<form action="{{route('blabla')}}" method="POST" class="w-full max-w-3xl mt-6 mx-auto">
+<form action="{{route('personal.info.form.submit')}}" method="POST" class="w-full max-w-3xl mt-6 mx-auto">
     @csrf
     @method('POST')
     <div class="flex flex-wrap -mx-3 mb-6">

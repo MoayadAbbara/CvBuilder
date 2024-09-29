@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    @yield('styles')
+    @stack('styles')
 </head>
 
 <body>
@@ -212,7 +212,7 @@
 
 
     <script src="https://kit.fontawesome.com/61da615d84.js" crossorigin="anonymous"></script>
-    @yield('scripts')
+    @stack('scripts')
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 @extends('Layouts.main')
 
-@section("styles")
+@push("styles")
 <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.css" />
 
 <style>
@@ -22,10 +22,10 @@
         padding-left: 40px;
     }
 </style>
-@endsection
+@endpush
 
 
-@section('scripts')
+@push('scripts')
 <script type="importmap">
     {
             "imports": {
@@ -58,5 +58,4 @@
             .then( /* ... */ )
             .catch( /* ... */ );
 </script>
-
-@endsection
+@endpush

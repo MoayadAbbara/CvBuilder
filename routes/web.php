@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResumeBuildFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -18,6 +19,24 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::prefix('/builder')->controller(ResumeBuildFormController::class)->group(function () {
+        Route::get('/personal-info', 'ShowPersonalInfoForm')->name('personal.info.form');
+        Route::post('/personal-info', 'StorePersonalInfo')->name('personal.info.form.submit');
+        Route::get('/experience/add', 'ShowExperienceForm')->name('experience.form');
+        Route::post('/experience/add', 'StoreExperience')->name('experience.form.submit');
+        Route::get('/experience/list', 'ShowExperienceList')->name('experience.form.list');
+        Route::get('/education/add', 'ShowEducationForm')->name('education.form');
+        Route::post('/education/add', 'StoreEducation')->name('education.form.submit');
+        Route::get('/education/list', 'ShowEducationList')->name('education.form.list');
+        Route::get('/skill/add', 'ShowSkillForm')->name('skill.form');
+        Route::post('/skill/add', 'StoreSkill')->name('skill.form.submit');
+        Route::get('/project/add', 'ShowProjectForm')->name('project.form');
+        Route::post('/project/add', 'StoreProject')->name('project.form.submit');
+        Route::get('/project/list', 'ShowProjectList')->name('project.form.list');
+        Route::get('/language/add', 'ShowLanguageForm')->name('language.form');
+        Route::post('/language/add', 'StoreLanguage')->name('language.form.submit');
+        Route::get('/language/list', 'ShowLanguageList')->name('language.form.list');
+    });
 });
 
 Route::get('/dashboard', function () {
@@ -43,14 +62,6 @@ Route::get('/send-data', function () {
 });
 
 
-Route::get('/form/1', function () {
-    return view('form');
-});
-
-Route::get('/form/2', function () {
-    return view('form2');
-});
-
 Route::post('/session', function (Illuminate\Http\Request $request) {
     $myArray = [
         'position' => $request->position,
@@ -67,18 +78,6 @@ Route::post('/session', function (Illuminate\Http\Request $request) {
 Route::get('/session', function (Illuminate\Http\Request $request) {
     return session('experiences');
     // $request->session()->forget('experiences');
-});
-
-
-
-Route::get('/rte', function () {
-    return view('rte');
-});
-
-Route::get('/list', function () {
-    return view('list', [
-        'experinces' => session('experiences')
-    ]);
 });
 
 
