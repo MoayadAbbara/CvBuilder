@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="flex-1">
-            <a href="{{route('experience.form')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
+            <a href="{{route('experience.form.list')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
                 {{ request()->is('builder/experience*') ? 'bg-blue-50 text-blue-500' : '' }}">
                 <span
                     class="w-8 h-8 {{ request()->is('builder/experience*') ? 'bg-blue-500 text-white' : 'bg-gray-50 border border-gray-200 text-gray-900' }} rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">02</span>
@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="flex-1">
-            <a href="{{route('education.form')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
+            <a href="{{route('education.form.list')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
                 {{ request()->is('builder/education*') ? 'bg-blue-50 text-blue-500' : '' }}">
                 <span
                     class="w-8 h-8 {{ request()->is('builder/education*') ? 'bg-blue-500 text-white' : 'bg-gray-50 border border-gray-200 text-gray-900' }} rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">03</span>
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li class="flex-1">
-            <a href="{{route('project.form')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
+            <a href="{{route('project.form.list')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
                 {{ request()->is('builder/project*') ? 'bg-blue-50 text-blue-500' : '' }}">
                 <span
                     class="w-8 h-8 {{ request()->is('builder/project*') ? 'bg-blue-500 text-white' : 'bg-gray-50 border border-gray-200 text-gray-900' }} rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">05</span>
@@ -46,7 +46,7 @@
             </a>
         </li>
         <li class="flex-1">
-            <a href="{{route('language.form')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
+            <a href="{{route('language.form.list')}}" class="flex items-center font-medium px-4 py-5 w-full rounded-lg
                 {{ request()->is('builder/language*') ? 'bg-blue-50 text-blue-500' : '' }}">
                 <span
                     class="w-8 h-8 {{ request()->is('builder/language*') ? 'bg-blue-500 text-white' : 'bg-gray-50 border border-gray-200 text-gray-900' }} rounded-full flex justify-center items-center mr-3 text-sm lg:w-10 lg:h-10">06</span>
