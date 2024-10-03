@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('resumes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('template_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

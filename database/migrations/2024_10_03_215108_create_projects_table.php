@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('templates', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('resume_id')->constrained()->onDelete('cascade');
+            $table->string('position');
             $table->string('name');
-            $table->string('path')->nullable();
-            $table->string('image')->nullable();
+            $table->string('link');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->boolean(column: 'is_ongoing');
+            $table->text('details');
             $table->timestamps();
         });
     }
@@ -25,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('templates');
+        Schema::dropIfExists('projects');
     }
 };
